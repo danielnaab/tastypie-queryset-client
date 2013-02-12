@@ -721,7 +721,7 @@ class Client(object):
         :param bool strict_field: strict field and convert value in field.
         :param object client:
         """
-        self._main_client = (client or slumber.API)(base_url, auth)
+        self._main_client = client or slumber.API(base_url, auth)
         self._base_url = self._main_client._store["base_url"]
         self._methods_gen(strict_field)
 
